@@ -1,0 +1,29 @@
+[
+  {
+    "firstname": "Ernesto",
+    "lastname": "Especiano",
+    "totalprice": 1500,
+    "depositpaid": true,
+    "checkin": "2026-10-01",
+    "checkout": "2026-10-05",
+    "additionalneeds": "Desayuno incluido"
+  },
+  {
+    "firstname": "Carlos",
+    "lastname": "Mendoza",
+    "totalprice": 2800,
+    "depositpaid": false,
+    "checkin": "2026-11-10",
+    "checkout": "2026-11-15",
+    "additionalneeds": "Late checkout"
+  },
+  {
+    "firstname": "Ana",
+    "lastname": "Ríos",
+    "totalprice": 950,
+    "depositpaid": true,
+    "checkin": "2026-12-01",
+    "checkout": "2026-12-03",
+    "additionalneeds": "Vista al mar"
+  }
+]
