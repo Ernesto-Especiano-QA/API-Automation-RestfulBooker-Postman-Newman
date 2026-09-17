@@ -1,0 +1,35 @@
+name: Automated API Tests Execution
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-api:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js Environment
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install Newman and HTMLExtra
+      run: |
+        npm install -g newman
+        npm install -g newman-reporter-htmlextra
+
+    - name: Run E2E API Test Suite with DDT
+      run: |
+        newman run Suite_E2E_RestfulBooker.postman_collection.json -e Booker_Production.postman_environment.json -d datos_reservas.json -r htmlextra
+
+    - name: Upload Test Report Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: newman-html-report
+        path: newman/
